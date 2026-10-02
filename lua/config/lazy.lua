@@ -15,6 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 
 -- lazy.nvim resets the runtimepath and guesses /usr/lib64/nvim on Ubuntu,
 -- but the bundled Tree-sitter parsers live in /usr/lib/nvim. Keep that dir.
+-- The path is derived from the nvim binary, so on macOS (Homebrew) this just
+-- re-adds the dir lazy.nvim already keeps and is harmless.
 local rtp_paths = {}
 local nvim_lib = vim.fn.fnamemodify(vim.v.progpath, ":p:h:h") .. "/lib/nvim"
 if vim.loop.fs_stat(nvim_lib) then

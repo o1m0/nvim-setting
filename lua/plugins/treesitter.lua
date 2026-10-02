@@ -7,8 +7,27 @@ return {
     build = ":TSUpdate",
     main = "nvim-treesitter.configs",
     opts = {
-      -- lua/vim/vimdoc/etc. keep using the parsers bundled in /usr/lib/nvim
-      ensure_installed = { "go" },
+      -- vim/vimdoc/query/c keep using the parsers bundled with Neovim
+      ensure_installed = {
+        "bash",
+        "css",
+        "go",
+        "gomod",
+        "gosum",
+        "html",
+        "java",
+        "javascript",
+        "json",
+        -- tsconfig.json and friends are detected as jsonc
+        "jsonc",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "tsx",
+        "typescript",
+        "yaml",
+      },
       highlight = { enable = true },
     },
   },
